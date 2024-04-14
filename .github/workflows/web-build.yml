@@ -39,6 +39,8 @@ jobs:
     needs: export-web
     runs-on: ubuntu-20.04
     if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: write
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v2
