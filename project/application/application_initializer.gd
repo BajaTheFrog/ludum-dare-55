@@ -1,12 +1,14 @@
 extends Node
-class_name Main_Application
+class_name ApplicationInitializer
 
 export (PackedScene) var title_context_scene
 export (PackedScene) var game_context_scene
 
 onready var context_root = $ContextRoot
 
-func _ready():	
+func _ready():
+	Application.initialize_game()
+	
 	var context_scene_dictionary = { 
 		TitleContext.CONTEXT_ID : title_context_scene, 
 		GameContext.CONTEXT_ID : game_context_scene

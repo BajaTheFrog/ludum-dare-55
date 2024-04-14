@@ -11,4 +11,6 @@ func context_id_string() -> String:
 	
 
 func _ready():
+	Application.game().initialize_session()
+	Application.game().session().initialize_round()
 	PresentationServices.ui_service().set_presentation_root(ui_root)
